@@ -1,0 +1,31 @@
+<div class="country-details-container">
+    <button (click)="goBack()">Back to Countries</button>
+    <h1>{{country?.name}}</h1>
+    <div class="country-details">
+      <div class="flag-wrapper">
+        <img [src]="country?.flag" alt="Flag of {{country?.name}}">
+      </div>
+      <div class="details-wrapper">
+        <p><span class="label">Capital:</span> {{country?.capital}}</p>
+        <p><span class="label">Region:</span> {{country?.region}}</p>
+        <p><span class="label">Subregion:</span> {{country?.subregion}}</p>
+        <p><span class="label">Population:</span> {{country?.population}}</p>
+        <p><span class="label">Languages:</span> {{country?.languages}}</p>
+        <p><span class="label">Currencies:</span> {{country?.currencies}}</p>
+        <p *ngIf="neighbors.length<1"><span class="label">Borders: No Border Countries</span> {{country?.borders}}</p>
+      </div>
+      <div class="Card" *ngIf="neighbors.length>0" class="neighbor-countries">
+        <h2>Bordering Countries:</h2>
+          <ul>
+            <li class="FLAGS" *ngFor="let neighbor of neighbors; trackBy: trackByFn"> {{ neighbor.name }}
+              <div (click)="goToCountryDetailsByName(neighbor.name)" >
+                <img [src]="neighbor.flags" alt="Flag of {{neighbor.name}}">
+              </div>
+              
+            </li>
+          </ul>
+              
+      </div>
+    </div>
+ 
+      

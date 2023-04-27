@@ -1,0 +1,57 @@
+    .country-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #F4F4F4;
+    }
+
+    .country-card {
+        margin: 18.5px;
+        box-sizing: border-box;
+        padding: auto;
+    }
+    .country-card :hover{
+         
+        color: #FF5733;
+        transform: scale(1.1);
+    }
+    .Full{
+
+        margin-top: 30px;
+        
+    }
+    
+    
+    .image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#fff;
+        border: 2px solid #dddddd;
+        border-radius: 15px;
+        padding: 1px;
+        width: 320px;  
+        margin-top: 30px;
+    }
+
+    .image-wrapper img {
+        width: 60px;
+        height: 40px;
+        margin-right: 40px;
+        border-radius: 10px;
+    }
+    .Text {
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        margin-right:30px;
+    }
+
+    .Region{
+        font-size: 10px;
+    }
+    
+    
+
+    

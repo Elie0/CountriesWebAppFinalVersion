@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="timeline-container">
+  <div class="timeline-text">
+    <form class="FORM">
+      <input [(ngModel)]="SearchText" (input)="SearchSubmit()"  type="text" placeholder="Search..." name="search"  >
+    </form>
+  </div>
+    <form (submit)="onSubmit($event)">
+        <div class="FILTER">
+            <button class="filter-button" (click)="toggle()"><i class="fa fa-filter" style="font-size:18px;color:white;"></i></button>
+                <div class="filter-options" [hidden]="!showFilterOptions">
+                <div class="Container">
+                    <h4 class="TEXT">Filter By Region  </h4>
+                    <div class="Choices">
+                        <label><input type="checkbox" name="region" value="Asia" (click)="onRegionSelected('Asia')">  Asia  <br> </label>
+                        <label><input type="checkbox" name="region" value="Europe" (click)="onRegionSelected('Europe')"> Europe  </label>
+                        <label><input type="checkbox" name="region" value="Oceania" (click)="onRegionSelected('Oceania')"> Oceania </label>
+                        <label><input type="checkbox" name="region" value="Africa" (click)="onRegionSelected('Africa')"> Africa  </label>
+                        <label><input type="checkbox" name="region" value="Americas" (click)="onRegionSelected('Americas')"> Americas  </label>
+                      </div>
+                    </div>                 
+                </div>
+        </div>    
+    </form>

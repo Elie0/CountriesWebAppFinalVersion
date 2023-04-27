@@ -1,0 +1,79 @@
+body {
+  background-image: url('../../assets/login-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 1200px;
+  width: 1600px;
+  display: flex;
+  position: relative;
+  box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.75);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  box-shadow: -10px 0px 15px -5px rgba(0, 0, 0, 0.75),
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-color: transparent;
+  box-shadow: -10px 0px 15px -5px rgba(211, 237, 241, 0.75), inset 0px 0px 0px 1000px rgba(255, 255, 255, 0.75);
+}
+
+.NAMES{
+    display: flex;
+}
+
+.NAMES input {
+    margin-right: 10px;
+  }
+.forms {
+    
+    
+    padding-top: 40px;
+    margin: 70px;
+    z-index: 1; 
+  }
+
+  .forms input{
+  padding: 10px;
+  border: 1px solid #dddddd;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  height: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  }
+
+  button{
+    margin-top: 8px;
+  }
+
+  .IMP{
+    color:rgba(79, 30, 225, 0.807);
+    text-decoration: none;
+  }
+  .IMP:hover{
+      color:darkblue;
+  }
+  
+  .space{
+    line-height:0.8;
+  }
+
+
+  .imgf{
+    width:50px;
+    height:40px;
+  }

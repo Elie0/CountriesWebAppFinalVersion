@@ -1,0 +1,24 @@
+<form [formGroup]="signInForm" class="forms">
+
+    <div>
+      <input type="text" id="email" formControlName="email" placeholder="Email" name="email">
+      <div *ngIf="CommonErrors('email')">
+        <div *ngIf="signInForm?.get('email')?.errors?.['required']">Email is required</div>
+        <div *ngIf="signInForm?.get('email')?.errors?.['email']">Invalid email format</div>
+      </div>
+    </div>
+  
+    <div>
+      <input type="password" id="password" formControlName="password" placeholder="Password" name="password" />
+      <div *ngIf="CommonErrors('password')">
+        <div *ngIf="signInForm?.get('password')?.errors?.['required']">Password is required</div>
+        <div *ngIf="signInForm?.get('password')?.errors?.['minlength']">Password should be at least 8 characters long</div>
+      </div>
+    </div>
+  
+    <div>
+      <button type="button" (click)="signIn()" [disabled]="!signInForm.valid">Sign In</button>
+    </div>
+  
+  </form>
+  

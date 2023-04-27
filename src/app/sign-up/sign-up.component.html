@@ -1,0 +1,71 @@
+
+
+  <body>
+
+    
+  <form [formGroup]="signUpForm"  class="forms" (ngSubmit)="onSubmit()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: relative;bottom: 90px;">
+    
+      <img src="../../assets/logo_blue.png" width="120"  class="d-inline-block align-top" alt="Your Logo">
+  </nav>
+    <div class="space">
+        <p> <span> <h1>Create new account <br> </h1> </span>  </p>
+        <p> Already a member? <a class="IMP" href="http://localhost:4200/signin" > SignIn  </a> </p>  
+    </div>
+
+      <div class="NAMES">
+        
+          <div>
+              <input type="text" id="firstName" formControlName="firstName"  placeholder="First Name">
+              <div *ngIf="CommonErrors('firstName')">
+                  <div *ngIf="signUpForm?.get('firstName')?.errors?.['required']">First name is required.</div>
+              </div>
+          </div>
+
+        
+            <div>
+                <input type="text" id="lastName"  formControlName ="lastName"  placeholder="Last Name"  >
+                <div *ngIf="CommonErrors('lastName')">
+                    <div *ngIf="signUpForm?.get('lastName')?.errors?.['required']"> Last name is required</div>
+                </div> 
+            </div>
+      </div>
+
+      <div>
+          <input type="text" id="email"  formControlName ="email"  placeholder="mail" name="mail" >
+          <div *ngIf="CommonErrors('email')">
+              <div *ngIf="signUpForm?.get('email')?.errors?.['required']"> Email is required</div>
+              <div *ngIf="signUpForm?.get('email')?.errors?.['email']"> Invalid email format</div>
+          </div> 
+      </div>
+
+      <div>
+          <input type="password" id="password" formControlName="password"  placeholder="Password" name="Password" />
+          <div *ngIf="CommonErrors('password')">
+            <div *ngIf="signUpForm?.get('password')?.errors?.['required']">Password is required</div>
+            <div *ngIf="signUpForm?.get('password')?.errors?.['minlength']">
+              Password should be at least 8 characters long
+            </div>
+          </div>
+      </div>
+      
+        <div>
+          <label for="role">Role:</label>
+          <select id="role" formControlName="roleName">
+            <option value="student">regular</option>
+            <option value="admin">Admin</option>
+          </select>
+          <div *ngIf="CommonErrors('roleName')">
+            <div *ngIf="signUpForm?.get('roleName')?.errors?.['required']">Role is required</div>
+          </div>
+        </div>
+      
+        <button type="submit" [disabled]="!signUpForm.valid">Sign up</button>
+        <div *ngIf="loading">
+          <img class="imgf" src="../../assets/Loop-the-loop-bike-loader-in-CSS.gif" alt="Loading...">
+        </div>
+
+  </form>
+
+    
+  </body>

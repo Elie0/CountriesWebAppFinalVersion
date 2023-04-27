@@ -1,0 +1,24 @@
+.FLAGS{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color:#fff;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    padding: 1px;
+    width: 200px;  
+    margin-top: 30px;    
+}
+
+.FLAGS hover{
+    background-color: lightblue;
+}
+
+.FLAGS img{
+    width: 60px;
+    height: 40px;
+    margin-right: 40px;
+    border-radius: 10px;
+}

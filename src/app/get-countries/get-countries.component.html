@@ -1,0 +1,15 @@
+<div class="country-container">
+    <div class="Full" *ngFor="let country of countries; trackBy: trackByCountry">
+      <div class="country-card" (click)="goToCountryDetailsByName(country.name)"> 
+        <div *ngIf="countries.length<1"> <span> <p> No Countries Match </p> </span></div>
+        <div class="image-wrapper">
+          <img [src]="country.flag" alt="Flag of {{country.name}}">
+          <p class="Text">
+            {{country.name}}<br>
+            <span  class="Region">{{country.region}}</span>
+          </p>       
+        </div>
+      </div>
+    </div>
+  </div>
+    
